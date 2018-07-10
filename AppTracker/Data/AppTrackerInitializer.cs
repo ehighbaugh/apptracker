@@ -21,16 +21,14 @@ namespace AppTracker.Data
             companies.ForEach(s => context.Companies.Add(s));
             context.SaveChanges();
 
-            var applications = new List<Application>
+            var apps = new List<Application>
             {
-                new Application { ID = 1, AppliedVia = "LinkedIn", DateApplied=DateTime.Parse("12/12/2005"), Position = "software engineer"},
-
-                new Application { ID = 2, AppliedVia = "Indeed", DateApplied=DateTime.Parse("12/05/2005"), Position = "DBA"},
-
-                new Application { ID = 3, AppliedVia = "LinkedIn", DateApplied=DateTime.Parse("11/25/2005"), Position = "web developer"}
+                new Application {AppliedVia = "LinkedIn", DateApplied=DateTime.Parse("12/12/2005"), Position = "software engineer", AppSubmitted = true, CLSubmitted = true, ResSubmitted = true},
+                new Application {AppliedVia = "Indeed", DateApplied=DateTime.Parse("12/05/2005"), Position = "DBA", AppSubmitted = true, CLSubmitted = true, ResSubmitted = false},
+                new Application {AppliedVia = "LinkedIn", DateApplied=DateTime.Parse("11/25/2005"), Position = "web developer", AppSubmitted = true, CLSubmitted = false, ResSubmitted = true}
             };
 
-            applications.ForEach(a => context.Applications.Add(a));
+            apps.ForEach(a => context.Applications.Add(a));
             context.SaveChanges();
         }
     } 
