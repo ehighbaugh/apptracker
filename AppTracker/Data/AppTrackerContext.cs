@@ -12,7 +12,7 @@ namespace AppTracker.Data
     {
         public DbSet<Application> Applications { get; set; }
         public DbSet<Company> Companies { get; set; }
-        public DbSet<FollowUp> FollowUps { get; set; }
+        public DbSet<Updates> FollowUps { get; set; }
         public DbSet<Position> Positions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -163,7 +163,7 @@
     </Compile>
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Company.cs" />
-    <Compile Include="Models\FollowUp.cs" />
+    <Compile Include="Models\Updates.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

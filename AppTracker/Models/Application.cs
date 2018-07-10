@@ -18,10 +18,16 @@ namespace AppTracker.Models
         [Display(Name = "Applied Via")]
         public string AppliedVia { get; set; }
 
+        [Display(Name = "Application Submitted")]
         public bool AppSubmitted { get; set; }
+
+        [Display(Name = "Resume Submitted")]
         public bool ResSubmitted { get; set; }
+
+        [Display(Name = "Cover Letter Submitted")]
         public bool CLSubmitted { get; set; }
 
         public Position Position { get; set; }
+        public ICollection<Updates> FollowUps { get; set; }
     }
 }
