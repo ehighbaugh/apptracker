@@ -10,10 +10,12 @@ namespace AppTracker.Data
 {
     public class AppTrackerContext : DbContext
     {
+        public AppTrackerContext() : base()
+        { }
+
         public DbSet<Application> Applications { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Updates> FollowUps { get; set; }
-        public DbSet<Position> Positions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

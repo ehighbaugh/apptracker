@@ -1,7 +1,7 @@
 ﻿public enum UpdateSubject
 {
-    Interview,
-    Phonecall,
     Email,
+    Telephone,
+    Interview,
     Other
 }

@@ -12,6 +12,6 @@ namespace AppTracker.Models
         public UpdateSubject Subject { get; set; }
         public string Update { get; set; }
 
-        public Application Application { get; set; }
+        public virtual Application Application { get; set; }
     }
 }

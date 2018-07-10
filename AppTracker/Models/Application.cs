@@ -9,6 +9,7 @@ namespace AppTracker.Models
     public class Application
     {
         public int ID { get; set; }
+        public string Position { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}")]
@@ -26,8 +27,8 @@ namespace AppTracker.Models
 
         [Display(Name = "Cover Letter Submitted")]
         public bool CLSubmitted { get; set; }
-
-        public Position Position { get; set; }
-        public ICollection<Updates> FollowUps { get; set; }
+        
+        public virtual Company Company { get; set; }
+        public virtual ICollection<Updates> FollowUps { get; set; }
     }
 }
