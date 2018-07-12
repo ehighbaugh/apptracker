@@ -21,6 +21,6 @@ namespace AppTracker.Models
         public string Phone { get; set; }
         public string Website { get; set; }
 
-        public virtual ICollection<Application> Applications { get; set; }
+        public ICollection<Application> Applications { get; set; }
     }
 }

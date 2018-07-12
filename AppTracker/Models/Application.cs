@@ -28,7 +28,7 @@ namespace AppTracker.Models
         [Display(Name = "Cover Letter Submitted")]
         public bool CLSubmitted { get; set; }
         
-        public virtual Company Company { get; set; }
-        public virtual ICollection<Updates> FollowUps { get; set; }
+        public Company Company { get; set; }
+        public ICollection<Update> Updates { get; set; }
     }
 }

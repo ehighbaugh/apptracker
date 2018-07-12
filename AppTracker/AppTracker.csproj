@@ -165,7 +165,7 @@
     </Compile>
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Company.cs" />
-    <Compile Include="Models\Updates.cs" />
+    <Compile Include="Models\Update.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -207,16 +207,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Application\Create.cshtml" />
-    <Content Include="Views\Application\Delete.cshtml" />
-    <Content Include="Views\Application\Details.cshtml" />
-    <Content Include="Views\Application\Edit.cshtml" />
-    <Content Include="Views\Application\Index.cshtml" />
     <Content Include="Views\Company\Create.cshtml" />
     <Content Include="Views\Company\Delete.cshtml" />
     <Content Include="Views\Company\Details.cshtml" />
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Application\Create.cshtml" />
+    <Content Include="Views\Application\Delete.cshtml" />
+    <Content Include="Views\Application\Details.cshtml" />
+    <Content Include="Views\Application\Edit.cshtml" />
+    <Content Include="Views\Application\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

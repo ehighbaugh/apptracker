@@ -5,13 +5,13 @@ using System.Web;
 
 namespace AppTracker.Models
 {
-    public class Updates
+    public class Update
     {
         public int ID { get; set; }
         public DateTime Date { get; set; }
         public UpdateSubject Subject { get; set; }
-        public string Update { get; set; }
+        public string Note { get; set; }
 
-        public virtual Application Application { get; set; }
+        public Application Application { get; set; }
     }
 }
