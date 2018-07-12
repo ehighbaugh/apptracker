@@ -18,7 +18,8 @@ namespace AppTracker.Controllers
         // GET: Application
         public ActionResult Index()
         {
-            return View(db.Applications.ToList());
+            var applications = db.Applications.Include(a => a.Company);
+            return View(applications.ToList());
         }
 
         // GET: Application/Details/5
@@ -39,6 +40,7 @@ namespace AppTracker.Controllers
         // GET: Application/Create
         public ActionResult Create()
         {
+            ViewBag.CompanyID = new SelectList(db.Companies, "ID", "Name");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace AppTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Position,DateApplied,AppliedVia,AppSubmitted,ResSubmitted,CLSubmitted")] Application application)
+        public ActionResult Create([Bind(Include = "ID,Position,DateApplied,AppliedVia,AppSubmitted,ResSubmitted,CLSubmitted,CompanyID")] Application application)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,7 @@ namespace AppTracker.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CompanyID = new SelectList(db.Companies, "ID", "Name", application.CompanyID);
             return View(application);
         }
 
@@ -71,6 +74,7 @@ namespace AppTracker.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CompanyID = new SelectList(db.Companies, "ID", "Name", application.CompanyID);
             return View(application);
         }
 
@@ -79,7 +83,7 @@ namespace AppTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Position,DateApplied,AppliedVia,AppSubmitted,ResSubmitted,CLSubmitted")] Application application)
+        public ActionResult Edit([Bind(Include = "ID,Position,DateApplied,AppliedVia,AppSubmitted,ResSubmitted,CLSubmitted,CompanyID")] Application application)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +91,7 @@ namespace AppTracker.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CompanyID = new SelectList(db.Companies, "ID", "Name", application.CompanyID);
             return View(application);
         }
 

@@ -30,6 +30,16 @@ namespace AppTracker.Data
 
             apps.ForEach(a => context.Applications.Add(a));
             context.SaveChanges();
+
+            var updates = new List<Update>
+            {
+                new Update { Subject = UpdateSubject.Email, Note = "Received email confirming application"},
+                new Update { Date=DateTime.Parse("08/08/2015"), Subject = UpdateSubject.Interview, Note = "Telephone interview scheduled."},
+                new Update { Subject=UpdateSubject.Other, Note = "Submitted cover letter via email", Date=DateTime.Parse("09/09/2015") }
+            };
+
+            updates.ForEach(u => context.Updates.Add(u));
+            context.SaveChanges();
         }
     } 
 }
