@@ -19,13 +19,13 @@ namespace AppTracker.Models
         [Display(Name = "Applied Via")]
         public string AppliedVia { get; set; }
 
-        [Display(Name = "Application Submitted")]
+        [Display(Name = "App")]
         public bool AppSubmitted { get; set; }
 
-        [Display(Name = "Resume Submitted")]
+        [Display(Name = "Res")]
         public bool ResSubmitted { get; set; }
 
-        [Display(Name = "Cover Letter Submitted")]
+        [Display(Name = "CL")]
         public bool CLSubmitted { get; set; }
 
         public int CompanyID { get; set; }
