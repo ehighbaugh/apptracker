@@ -26,5 +26,11 @@ textarea {
 
 /* Navbar styling bootstrap overrides*/
 .navbar {
-    background-color: darkslateblue;
+    background-color: #0d498b;
+}
+
+/* Custom Styles */
+
+.style-cursive-font {
+    font-family: 'Chonburi', cursive, serif;
 }
