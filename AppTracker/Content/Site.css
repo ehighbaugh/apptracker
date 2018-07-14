@@ -34,3 +34,25 @@ textarea {
 .style-cursive-font {
     font-family: 'Chonburi', cursive, serif;
 }
+
+.main-header {
+    width: 90vw;
+    height: 50vh;
+    display: block;
+    position: relative;
+}
+
+    .main-header::after {
+        content: "";
+        background: url(https://images.unsplash.com/photo-1527153818091-1a9638521e2a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5fce4ce8856a711cc50a14e03e58783a&auto=format&fit=crop&w=1158&q=80);
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: inherit;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
