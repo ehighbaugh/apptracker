@@ -54,6 +54,7 @@ namespace AppTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Application application = db.Applications.Find(id);
             if (application == null)
             {
