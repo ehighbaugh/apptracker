@@ -16,12 +16,19 @@ namespace AppTracker.Controllers
         private AppTrackerContext db = new AppTrackerContext();
 
         // GET: Application
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string searchString)
         {
             ViewBag.PosSortParm = String.IsNullOrEmpty(sortOrder) ? "position_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var applications = from s in db.Applications
-                           select s;
+                               select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                applications = applications.Where(a => a.Position.Contains(searchString)
+                                            || a.Company.Name.Contains(searchString));
+            }
+
             switch (sortOrder)
             {
                 case "position_desc":
