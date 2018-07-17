@@ -75,7 +75,7 @@ namespace AppTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Position,DateApplied,AppliedVia,AppSubmitted,ResSubmitted,CLSubmitted,CompanyID")] Application application)
+        public ActionResult Create([Bind(Include = "Position,DateApplied,AppliedVia,AppSubmitted,ResSubmitted,CLSubmitted,CompanyID")] Application application)
         {
             if (ModelState.IsValid)
             {
@@ -109,7 +109,7 @@ namespace AppTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Position,DateApplied,AppliedVia,AppSubmitted,ResSubmitted,CLSubmitted,CompanyID")] Application application)
+        public ActionResult Edit([Bind(Include = "Position,DateApplied,AppliedVia,AppSubmitted,ResSubmitted,CLSubmitted,CompanyID")] Application application)
         {
             if (ModelState.IsValid)
             {
