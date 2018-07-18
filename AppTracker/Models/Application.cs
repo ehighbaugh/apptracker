@@ -29,7 +29,6 @@ namespace AppTracker.Models
         public bool CLSubmitted { get; set; }
 
         public int CompanyID { get; set; }
-        
         public virtual Company Company { get; set; }
         public virtual ICollection<Update> Updates { get; set; }
     }

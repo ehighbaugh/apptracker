@@ -168,6 +168,14 @@
     <Compile Include="Migrations\201807121827225_Initial.Designer.cs">
       <DependentUpon>201807121827225_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807181724280_ConnectingApplicationToUpdates.cs" />
+    <Compile Include="Migrations\201807181724280_ConnectingApplicationToUpdates.Designer.cs">
+      <DependentUpon>201807181724280_ConnectingApplicationToUpdates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807181734462_UpdateApplicationFluentApi.cs" />
+    <Compile Include="Migrations\201807181734462_UpdateApplicationFluentApi.Designer.cs">
+      <DependentUpon>201807181734462_UpdateApplicationFluentApi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Company.cs" />
@@ -249,6 +257,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807121827225_Initial.resx">
       <DependentUpon>201807121827225_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807181724280_ConnectingApplicationToUpdates.resx">
+      <DependentUpon>201807181724280_ConnectingApplicationToUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807181734462_UpdateApplicationFluentApi.resx">
+      <DependentUpon>201807181734462_UpdateApplicationFluentApi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

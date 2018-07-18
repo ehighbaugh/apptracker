@@ -47,6 +47,7 @@ namespace AppTracker.Controllers
             return View(applications.ToList());
         }
 
+
         // GET: Application/Details/5
         public ActionResult Details(int? id)
         {
