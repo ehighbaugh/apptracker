@@ -161,6 +161,7 @@
     <Compile Include="Controllers\UpdateController.cs" />
     <Compile Include="Data\AppTrackerContext.cs" />
     <Compile Include="Data\AppTrackerInitializer.cs" />
+    <Compile Include="Data\LinkHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
