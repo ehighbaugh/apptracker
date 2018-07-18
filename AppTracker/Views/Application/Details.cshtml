@@ -1,0 +1,102 @@
+﻿@model AppTracker.Models.Application
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Application</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Company.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateApplied)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateApplied)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppliedVia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppliedVia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppSubmitted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppSubmitted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResSubmitted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResSubmitted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLSubmitted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLSubmitted)
+        </dd>
+
+    </dl>
+
+    @if (Model.Updates != null)
+    {
+        <h4>Updates</h4>
+        <hr />
+        @Html.ActionLink("Create New Note", "Create", "Update", new { ApplicationID = Model.ApplicationID})
+        <table class="table">
+            <tr>
+                <th> </th>
+                <th> Date </th>
+                <th> Note </th>
+            </tr>
+
+            @foreach (var item in Model.Updates)
+            {
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @item.Date
+                    </td>
+                    <td>
+                        @item.Note
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
