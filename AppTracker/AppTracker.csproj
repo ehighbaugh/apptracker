@@ -158,6 +158,7 @@
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UpdateController.cs" />
     <Compile Include="Data\AppTrackerContext.cs" />
     <Compile Include="Data\AppTrackerInitializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -219,6 +220,11 @@
     <Content Include="Views\Application\Details.cshtml" />
     <Content Include="Views\Application\Edit.cshtml" />
     <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Update\Create.cshtml" />
+    <Content Include="Views\Update\Delete.cshtml" />
+    <Content Include="Views\Update\Details.cshtml" />
+    <Content Include="Views\Update\Edit.cshtml" />
+    <Content Include="Views\Update\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

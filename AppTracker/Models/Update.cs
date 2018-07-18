@@ -12,6 +12,7 @@ namespace AppTracker.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}")]
+        [Display(Name = "Date Noted")]
         public DateTime Date { get; set; }
 
         public UpdateSubject Subject { get; set; }
