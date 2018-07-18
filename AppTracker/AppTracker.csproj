@@ -155,28 +155,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Const\const.cs" />
-    <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UpdateController.cs" />
     <Compile Include="Data\AppTrackerContext.cs" />
     <Compile Include="Data\AppTrackerInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807121827225_Initial.cs" />
-    <Compile Include="Migrations\201807121827225_Initial.Designer.cs">
-      <DependentUpon>201807121827225_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807181724280_ConnectingApplicationToUpdates.cs" />
-    <Compile Include="Migrations\201807181724280_ConnectingApplicationToUpdates.Designer.cs">
-      <DependentUpon>201807181724280_ConnectingApplicationToUpdates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807181734462_UpdateApplicationFluentApi.cs" />
-    <Compile Include="Migrations\201807181734462_UpdateApplicationFluentApi.Designer.cs">
-      <DependentUpon>201807181734462_UpdateApplicationFluentApi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Update.cs" />
@@ -227,16 +212,6 @@
     <Content Include="Views\Company\Details.cshtml" />
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Company\Index.cshtml" />
-    <Content Include="Views\Application\Create.cshtml" />
-    <Content Include="Views\Application\Delete.cshtml" />
-    <Content Include="Views\Application\Details.cshtml" />
-    <Content Include="Views\Application\Edit.cshtml" />
-    <Content Include="Views\Application\Index.cshtml" />
-    <Content Include="Views\Update\Create.cshtml" />
-    <Content Include="Views\Update\Delete.cshtml" />
-    <Content Include="Views\Update\Details.cshtml" />
-    <Content Include="Views\Update\Edit.cshtml" />
-    <Content Include="Views\Update\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -253,17 +228,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807121827225_Initial.resx">
-      <DependentUpon>201807121827225_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807181724280_ConnectingApplicationToUpdates.resx">
-      <DependentUpon>201807181724280_ConnectingApplicationToUpdates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807181734462_UpdateApplicationFluentApi.resx">
-      <DependentUpon>201807181734462_UpdateApplicationFluentApi.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

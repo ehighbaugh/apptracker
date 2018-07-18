@@ -8,7 +8,7 @@ namespace AppTracker.Models
 {
     public class Application
     {
-        public int ID { get; set; }
+        public int ApplicationID { get; set; }
         public string Position { get; set; }
 
         [DataType(DataType.Date)]

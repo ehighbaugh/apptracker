@@ -8,7 +8,7 @@ namespace AppTracker.Models
 {
     public class Update
     {
-        public int ID { get; set; }
+        public int UpdateID { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:d}")]
@@ -18,7 +18,6 @@ namespace AppTracker.Models
         public string Note { get; set; }
 
         public int ApplicationID { get; set; }
-
         public virtual Application Application { get; set; }
     }
 }
