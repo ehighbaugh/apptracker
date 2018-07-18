@@ -38,6 +38,7 @@ namespace AppTracker.Controllers
         }
 
         // GET: Application/Create
+        // GET: Application/Create
         public ActionResult Create()
         {
             ViewBag.CompanyID = new SelectList(db.Companies, "CompanyID", "Name");

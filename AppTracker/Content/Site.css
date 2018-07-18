@@ -31,10 +31,6 @@ textarea {
 
 /* Custom Styles */
 
-.style-cursive-font {
-    font-family: 'Chonburi', cursive, serif;
-}
-
 .main-header {
     width: 90vw;
     height: 50vh;
@@ -63,3 +59,5 @@ textarea {
     font-size: 4em;
     color: #1c1b1e;
 }
+
+
