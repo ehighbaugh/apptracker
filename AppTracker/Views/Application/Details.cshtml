@@ -44,7 +44,13 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AppSubmitted)
+            Submissions:
+        </dt>
+        <dd>
+
+        </dd>
+        <dt>
+            Application
         </dt>
 
         <dd>
@@ -52,7 +58,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ResSubmitted)
+            Resume
         </dt>
 
         <dd>
@@ -60,7 +66,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CLSubmitted)
+            Cover Letter
         </dt>
 
         <dd>
@@ -76,7 +82,7 @@
     @if (Model.Updates != null)
     {
         <h2>Updates</h2>
-        @Html.ActionLink("Create new note", "Create", "Update")
+        @Html.ActionLink("Add new update", "Create", "Update")
         <table class="table">
             <tr>
                 <th> Date </th>
