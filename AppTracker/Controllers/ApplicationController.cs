@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using AppTracker.Data;
 using AppTracker.Models;
+using AppTracker.ViewModels;
 
 namespace AppTracker.Controllers
 {
@@ -47,22 +48,39 @@ namespace AppTracker.Controllers
             return View(applications.ToList());
         }
 
-
-        // GET: Application/Details/5
+        // GET: Application/Details
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            var viewModel = new AppDetailData();
+            viewModel.Applications = db.Applications
+                .Include(a => a.Updates)
+                .OrderBy(a => a.DateApplied);
+
+            if (id != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                ViewBag.ApplicationID = id.Value;
+                viewModel.Applications = viewModel.Applications.Where(
+                    a => a.ID == id.Value);
             }
 
-            Application application = db.Applications.Find(id);
-            if (application == null)
-            {
-                return HttpNotFound();
-            }
-            return View(application);
+            return View(viewModel);
         }
+
+        // GET: Application/Details/5
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+
+        //    Application application = db.Applications.Find(id);
+        //    if (application == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(application);
+        //}
 
         // GET: Application/Create
         public ActionResult Create()
