@@ -28,6 +28,7 @@ namespace AppTracker.Models
         [Display(Name = "CL")]
         public bool CLSubmitted { get; set; }
 
+        [Display(Name = "Company")]
         public int CompanyID { get; set; }
         public virtual Company Company { get; set; }
         public virtual ICollection<Update> Updates { get; set; }
