@@ -9,10 +9,19 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by company or contact name: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.CompSortParm})
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.CompSortParm })
         </th>
         <th>
             @Html.ActionLink("Contact Name", "Index", new { sortOrder = ViewBag.ContactSortParm})
