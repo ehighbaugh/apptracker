@@ -53,18 +53,20 @@
             @Html.DisplayFor(modelItem => item.ContactTitle)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Email)
+            @*@Html.DisplayFor(modelItem => item.Email)*@
+            <a href="mailto:@item.Email">@item.Email</a>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Phone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Website);
+            @*@Html.DisplayFor(modelItem => item.Website)*@
+            <a href="http://@item.Website" target="_blank">@item.Website</a>
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CompanyID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CompanyID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CompanyID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.CompanyID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CompanyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CompanyID })
         </td>
     </tr>
 }
