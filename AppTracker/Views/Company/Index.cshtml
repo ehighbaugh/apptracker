@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.CompSortParm})
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ContactName)
+            @Html.ActionLink("Contact Name", "Index", new { sortOrder = ViewBag.ContactSortParm})
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ContactTitle)

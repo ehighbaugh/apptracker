@@ -16,9 +16,29 @@ namespace AppTracker.Controllers
         private AppTrackerContext db = new AppTrackerContext();
 
         // GET: Company
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
-            return View(db.Companies.ToList());
+            ViewBag.CompSortParm = String.IsNullOrEmpty(sortOrder) ? "comp_desc" : "";
+            ViewBag.ContactSortParm = sortOrder == "Contact" ? "contact_desc" : "Contact";
+            var companies = db.Companies.Include(c => c.Applications);
+
+            switch (sortOrder)
+            {
+                case "comp_desc":
+                    companies = companies.OrderByDescending(c => c.Name);
+                    break;
+                case "Contact":
+                    companies = companies.OrderBy(s => s.ContactName);
+                    break;
+                case "contact_desc":
+                    companies = companies.OrderByDescending(s => s.ContactName);
+                    break;
+                default:
+                    companies = companies.OrderBy(s => s.Name);
+                    break;
+            }
+
+            return View(companies.ToList());
         }
 
         // GET: Company/Details/5
