@@ -16,9 +16,29 @@ namespace AppTracker.Controllers
         private AppTrackerContext db = new AppTrackerContext();
 
         // GET: Application
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
             var applications = db.Applications.Include(a => a.Company).Include(a => a.Updates);
+
+            ViewBag.PosSortParm = String.IsNullOrEmpty(sortOrder) ? "pos_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            switch (sortOrder)
+            {
+                case "pos_desc":
+                    applications = applications.OrderByDescending(a => a.Position);
+                    break;
+                case "Date":
+                    applications = applications.OrderBy(a => a.DateApplied);
+                    break;
+                case "date_desc":
+                    applications = applications.OrderByDescending(a => a.DateApplied);
+                    break;
+                default:
+                    applications = applications.OrderBy(a => a.Position);
+                    break;
+            }
+
             return View(applications.ToList());
         }
 
