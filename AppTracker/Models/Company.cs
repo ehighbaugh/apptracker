@@ -9,6 +9,8 @@ namespace AppTracker.Models
     public class Company
     {
         public int CompanyID { get; set; }
+
+        [Display(Name="Company")]
         public string Name { get; set; }
 
         [Display(Name = "Contact Name")]

@@ -4,17 +4,15 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Application Details</h2>
 
 <div>
-    <h4>Application</h4>
+    <h3>Application</h3>
     <hr />
     <dl class="dl-horizontal">
-
         <dt>
             @Html.DisplayNameFor(model => model.Position)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Position)
         </dd>
@@ -44,36 +42,13 @@
         </dd>
 
         <dt>
-            Submissions:
+            Submitted
         </dt>
         <dd>
-
+            Application @Html.DisplayFor(model => model.AppSubmitted)  |  Resume @Html.DisplayFor(model => model.ResSubmitted)  |  Cover Letter @Html.DisplayFor(model => model.CLSubmitted)
         </dd>
-        <dt>
-            Application
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AppSubmitted)
-        </dd>
-
-        <dt>
-            Resume
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ResSubmitted)
-        </dd>
-
-        <dt>
-            Cover Letter
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CLSubmitted)
-        </dd>
-
     </dl>
+
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.ApplicationID }) |
         @Html.ActionLink("Back to List", "Index")
@@ -81,7 +56,7 @@
     
     @if (Model.Updates != null)
     {
-        <h2>Updates</h2>
+        <h3>Updates</h3>
         @Html.ActionLink("Add new update", "Create", "Update")
         <table class="table">
             <tr>
