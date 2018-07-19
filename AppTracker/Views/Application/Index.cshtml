@@ -9,6 +9,15 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by position or company: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -35,35 +44,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Position)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Company.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateApplied)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AppliedVia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AppSubmitted)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ResSubmitted)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CLSubmitted)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ApplicationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ApplicationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ApplicationID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateApplied)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppliedVia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppSubmitted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResSubmitted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLSubmitted)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ApplicationID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ApplicationID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ApplicationID })
+            </td>
+        </tr>
+    }
 
 </table>
