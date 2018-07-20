@@ -13,8 +13,8 @@
 @using (Html.BeginForm())
 {
     <p>
-        Find by position or company: @Html.TextBox("searchString")
-        <input type="submit" value="Search" />
+        Find by position or company: @Html.TextBox("searchString", null, new { @class = "form-control"})
+        <input class="btn btn-default" type="submit" value="Search" />
     </p>
 }
 
