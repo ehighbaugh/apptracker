@@ -13,18 +13,19 @@
         <p>
             Keep a list of companies that you may possibly want to work for. When you add an application record, you can easily select the company you are applying to.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink("Learn More >>", "Index", "Company", null, new { @class = "btn btn-default" })
+        </p>
     </div>
     <div class="col-md-4">
         <h2>Applications</h2>
         <p>
            Staying organized about what jobs you've applied to at what companies helps you work smarter.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink("Learn More >>", "Index", "Application", null, new { @class = "btn btn-default" })</p>
     </div>
     <div class="col-md-4">
         <h2>Organized</h2>
         <p>Lorem ipsum heres a few more words that I can't remember. I actually took Latin in high school and I'd never heard of Lorem Ipsum before.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink("Learn More >>", "Index", "Home", null, new { @class = "btn btn-default" })</p>
     </div>
 </div>
