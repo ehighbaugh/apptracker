@@ -72,7 +72,7 @@ namespace AppTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CompanyID,Name,ContactName,ContactTitle,Email,Phone,Website")] Company company)
+        public ActionResult Create(Company company)
         {
             if (ModelState.IsValid)
             {
@@ -104,7 +104,7 @@ namespace AppTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CompanyID,Name,ContactName,ContactTitle,Email,Phone,Website")] Company company)
+        public ActionResult Edit(Company company)
         {
             if (ModelState.IsValid)
             {

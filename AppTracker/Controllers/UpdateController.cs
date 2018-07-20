@@ -49,7 +49,7 @@ namespace AppTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UpdateID,Date,Subject,Note,ApplicationID")] Update update)
+        public ActionResult Create(Update update)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace AppTracker.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UpdateID,Date,Subject,Note,ApplicationID")] Update update)
+        public ActionResult Edit(Update update)
         {
             if (ModelState.IsValid)
             {
