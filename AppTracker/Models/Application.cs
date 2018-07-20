@@ -12,7 +12,7 @@ namespace AppTracker.Models
         public string Position { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:d}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode =true)]
         [Display(Name = "Date Applied")]
         public DateTime DateApplied { get; set; }
 

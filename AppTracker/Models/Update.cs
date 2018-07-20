@@ -8,7 +8,7 @@ namespace AppTracker.Models
         public int UpdateID { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:d}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode =true)]
         [Display(Name = "Date Noted")]
         public DateTime Date { get; set; }
 
