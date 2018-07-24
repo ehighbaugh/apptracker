@@ -1,6 +1,7 @@
 ﻿Instructions:
-- Clone project via Visual Studio
-- (Optional) In Package Manager Console run 'update-database' to load sample database
+1. Clone project via Visual Studio, or download and open in Visual Studio.
+2. In the Package Manager Console, run command 'update-database'.
+3. Run 
 
 Purpose:
 The purpose of my application is to help job seekers keep track of pertinent information (potential employers, positions applied for,
