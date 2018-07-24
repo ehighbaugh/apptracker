@@ -16,7 +16,8 @@ namespace AppTracker.Models
 
         public string Note { get; set; }
 
-        public int ApplicationID { get; set; }
+        public virtual int CompanyID { get; set; }
+        public virtual int ApplicationID { get; set; }
         public virtual Application Application { get; set; }
     }
 }

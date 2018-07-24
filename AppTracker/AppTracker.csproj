@@ -173,6 +173,10 @@
     <Compile Include="Migrations\201807182112321_Initial.Designer.cs">
       <DependentUpon>201807182112321_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807240103144_UpdateAddedCompanyId.cs" />
+    <Compile Include="Migrations\201807240103144_UpdateAddedCompanyId.Designer.cs">
+      <DependentUpon>201807240103144_UpdateAddedCompanyId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Application.cs" />
     <Compile Include="Models\Company.cs" />
@@ -259,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807182112321_Initial.resx">
       <DependentUpon>201807182112321_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807240103144_UpdateAddedCompanyId.resx">
+      <DependentUpon>201807240103144_UpdateAddedCompanyId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
