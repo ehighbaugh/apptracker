@@ -16,9 +16,34 @@ namespace AppTracker.Controllers
         private AppTrackerContext db = new AppTrackerContext();
 
         // GET: Update
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
             var updates = db.Updates.Include(u => u.Application);
+
+            ViewBag.PosSortParm = String.IsNullOrEmpty(sortOrder) ? "pos_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                updates = updates.Where(u => u.Application.Position.Contains(searchString) || u.Application.Company.Name.Contains(searchString) );
+            }
+
+            switch (sortOrder)
+            {
+                case "pos_desc":
+                    updates = updates.OrderByDescending(a => a.Application.Position);
+                    break;
+                case "Date":
+                    updates = updates.OrderBy(a => a.Date);
+                    break;
+                case "date_desc":
+                    updates = updates.OrderByDescending(a => a.Date);
+                    break;
+                default:
+                    updates = updates.OrderBy(a => a.Application.Position);
+                    break;
+            }
+
             return View(updates.ToList());
         }
 
