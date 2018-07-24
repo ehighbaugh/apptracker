@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<AppTracker.Models.Update>
 
 @{
-    ViewBag.Title = "Updates for Applications";
+                /**/
+
+                ViewBag.Title = "Updates for Applications";
 }
 
 <h2>Updates for Applications</h2>
@@ -9,16 +11,24 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by position or company: @Html.TextBox("searchString", null, new { @class = "form-control" })
+        <button class="btn btn-default" type="submit">Search</button>
+    </p>
+}
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Application.Position)
+            @Html.ActionLink("Position", "Index", new { sortOrder = ViewBag.PosSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Application.Company.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Date)
+            @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.DateSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Subject)
@@ -30,30 +40,31 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Application.Position)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Application.Company.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Subject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Note)
-        </td>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Application.Position)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Application.Company.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Subject)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Note)
+    </td>
 
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.UpdateID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.UpdateID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.UpdateID })
-        </td>
-    </tr>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.UpdateID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.UpdateID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.UpdateID })
+    </td>
+</tr>
 }
 
 </table>
