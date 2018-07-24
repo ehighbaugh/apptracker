@@ -4,6 +4,7 @@ namespace AppTracker.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using AppTracker.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<AppTracker.Data.AppTrackerContext>
     {

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace AppTracker.Data
 {
-    public class AppTrackerInitializer : DropCreateDatabaseAlways<AppTrackerContext>
+    public class AppTrackerInitializer : DropCreateDatabaseIfModelChanges<AppTrackerContext>
     {
         protected override void Seed(AppTrackerContext context)
         {
